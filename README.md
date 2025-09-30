@@ -4,4 +4,4 @@ The project is an application that allows users to find flights by specified des
 It implements a simple data hashing system.
 
 
-The project was completed as a final credit for the Beijing Institute of Technology for Computer Science major.
+The project was completed as a final test for the Beijing Institute of Technology for Computer Science major.
