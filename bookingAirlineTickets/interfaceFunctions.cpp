@@ -1,7 +1,5 @@
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <algorithm>
 #include <iomanip>
 #include <sstream>
 #include "Header.h"
@@ -15,14 +13,12 @@ pair<int, int> time_checker() {
 	if ((time_1 < 0) || (time_1 >= 24) || (!time_1)) {
 		interface::setstars('*');
 		throw "Incorrect value\n";
-		interface::setstars('*');
 	}
 	cout << "Enter minutes: ";
 	cin >> time_2;
 	if ((time_2 < 0) || (time_2 >= 60) || (!time_2)) {
 		interface::setstars('*');
 		throw "Incorrect value\n";
-		interface::setstars('*');
 	}
 	else {
 		return pair<int, int>(time_1, time_2);
@@ -96,7 +92,6 @@ void datafile::exit_function() {
 	cin >> exit_checker;
 	if (exit_checker == 0) {
 		interface::main_interface_output();
-		exit_checker = 0;
 	}
 }
 
@@ -127,7 +122,7 @@ void interface::write_function() {
 	);
 };
 
-void interface::setstars(char symb = '*') {
+void interface::setstars(char symb) {
 	cout << "\n" << string(120, symb) << "\n\n";
 }
 
@@ -152,11 +147,10 @@ void interface::secondary_interface_output() {
 		exit(0);
 		break;
 	}
-
 }
 
 void interface::main_interface_output() {
-	setstars();
+	interface::setstars('*');
 	cout
 		<< "Airline Booking System\n\n"
 		<< "Choose what you want to do(write a number): \n\n"
@@ -171,5 +165,3 @@ void interface::main_interface_output() {
 	cin >> interface_selection;
 	interface::secondary_interface_output();
 }
-
-
